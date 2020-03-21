@@ -10,6 +10,7 @@ import OnResponseLogger from './lib/reqHandlers/onResponseLogger';
 import cors from './lib/reqHandlers/enableCors';
 import p3p from './lib/reqHandlers/enableP3P';
 import PatientsRoutes from './routes/patients';
+import ReportsRoutes from './routes/reports';
 import Logger from './logger';
 
 const bodyParser = require('body-parser');
@@ -35,6 +36,7 @@ app.use('/status', (req, res) => {
 
 // Setting up routes
 app.use('/patients', PatientsRoutes);
+app.use('/reports', ReportsRoutes);
 
 app.get('/robots.txt', (req, res) => {
   res.status(200);
